@@ -37,6 +37,8 @@ $mail->AltBody = "Gracias por Suscribirte a Marcello's Pizzeria!!!";
 try {
     $mail->send();
     echo "El mensaje se envio correctamente!";
+    header("Location:index.php?suscrito=true");
+    exit();
 } catch (Exception $e) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 }
